@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/snt_office"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="* Get in touch with our sales representative if you are interested in advertising on our site. To know more about our products/services, kindly Contact at 0120 - 652-652-6 or mail us at customercare@bizzduniya.com\n
+* International users interested in advertising on BizzDuniya.com, kindly E-mail Us or call us at 0120 - 652-652-6"
+                android:textColor="@color/grayText" />
+
+            <TextView
+                android:id="@+id/com_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/muli_bold"
+                android:text="BizzDuniya"
+                android:layout_gravity="center"
+                android:textColor="@color/md_blue_900"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/co_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/muli_semibold"
+                android:text="Head Office (India)"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="3dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:tint="@color/grayText"
+                    android:src="@drawable/c_location"/>
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/muli_semibold"
+                    android:text="101, 1st Floor,
+Alpha Tower Sector-9,
+Vasundhara, Ghaziabad
+(U.P) 201010"
+                    android:textColor="@color/grayText"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/helpNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:drawableTint="@color/grayText"
+                android:fontFamily="@font/muli_semibold"
+                android:text="0120 - 652-652-6"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/c_all"
+                android:textColor="@color/grayText"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/muli_semibold"
+                android:text="customercare@bizzduniya.com"
+                android:drawableTint="@color/grayText"
+                android:drawablePadding="10dp"
+                android:layout_marginBottom="10dp"
+                android:drawableLeft="@drawable/c_mail"
+                android:textColor="@color/grayText"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/website"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/muli_semibold"
+                android:text="website"
+                android:visibility="gone"
+                android:drawableTint="@color/grayText"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/c_web"
+                android:textColor="@color/grayText"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/facebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                android:fontFamily="@font/muli_semibold"
+                android:text="Facebook"
+                android:drawableTint="@color/grayText"
+                android:drawablePadding="10dp"
+                android:layout_marginBottom="10dp"
+                android:drawableLeft="@drawable/c_fbl"
+                android:textColor="@color/grayText"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

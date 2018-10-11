@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">Bizzduniya</string>
+    <string name="title_activity_home">HomeAct</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="plusSign">&lt;font color="#111111"&gt;+&lt;/font&gt;</string>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <string name="aboutUs">
+        Bizzduniya.com is India Fastest growing online B2B platform for SMEs, initiated &amp; Promoted by SNT InfoTech Private Limited, an ISO Certified Company. It has been working in the market for last Nine years and serving as a B2B Marketplace for connecting buyers with suppliers worldwide. Bizzduniya.com provides complete B2B solutions including free business catalogue, free Classifieds, free Yellow Pages, free trade shows, free business listing, business leads, b2b deals, and business inquiries from India and around the world.
+
+Head Office: 101, First Floor, Alpha Tower, Sector-9, Vasundhara, Ghaziabad, Uttar Pradesh, INDIA
+Infrastructure: Workforce of over 200+ professionals with well equipped offices.
+Our Products: B2B Portal
+
+    </string>
+
+
+
+    <string name="tcnContect">
+        Term of Use
+1. WEBSITE- MERELY A VENUE/PLATFORM
+Web site acts as a mere venue/platform for our members to negotiate/interact for buying, selling and other business services by way of locating companies to trade with, through our on-line exchange.
+We do not take part in the actual transaction that takes place between the buyers and sellers and hence are not a party to any contract for sale negotiated between buyers and sellers. All transactions will be the responsibility of the members only. This agreement shall not be deemed to create any partnership, joint venture, or other joint business relationship between BizzDuniya and other party.
+•	USER(S) ELIGIBILITY
+User(s) means any individual or business entity/organization that legally operates in India or in other countries, uses and has the right to use the services provided by BizzDuniya. Our services are available only to those individuals or companies who can form legally binding contracts under the applicable law. Therefore, user(s) must not be a minor as per Indian Law, i. e. user(s) must be at least 18 years of age to be eligible to use our services.
+BizzDuniya advises its users that while accessing the web site, they must follow/abide by the related laws.BizzDuniya is not responsible for the possible consequences caused by your behaviour during use of web site. BizzDuniya may, in its sole discretion, refuse the service to anyone at any time. The service is not available to temporarily or indefinitely suspended members of web site.
+•	USER(S) AGREEMENT
+This agreement applies to user(s) if user(s) are visitors, registered - free or paid user(s) who access the web site for any purpose. It also applies to any legal entity which may be represented by you under actual or apparent authority. User(s) may use this site solely for their own personal or internal purposes.
+This agreement applies to all Bizz Duniya services offered on the web site, collectively with any additional terms and condition that may be applicable to the specific service used/accessed by user(s).In the event of a conflict or inconsistency between any provision of the terms and conditions mentioned herein with those of the particular service, the provisions of the terms and conditions applicable to such specific services shall prevail.
+•	AMENDMENT TO USER(S) AGREEMENT
+BizzDuniya may change, modify, amend, or update this agreement from time to time without any prior notification to user(s) and the amended and restated terms and conditions of use shall be effective immediately on posting. If you do not adhere to the changes, you must stop using the service. Your continuous use of the service will signify your acceptance of the changed terms.
+•	INTELLECTUAL PROPERTY RIGHTS
+BizzDuniya is the sole owner or lawful licensee of all the rights to the web site and its content. Web site content means its design, layout, text, images, graphics etc.
+All rights, not otherwise claimed under this agreement or by Bizzduniya.com, are hereby reserved. The information contained in this web site is intended, solely to provide general information for the personal use of the reader, who accepts full responsibility for its use. BizzDuniya does not represent or endorse the accuracy or reliability of any information, or advertisements (collectively, the "content") contained on, distributed through, or linked, downloaded or accessed from any of the services contained on this web site, or the quality of any products, information or other materials displayed, or obtained by you as a result of an advertisement or any other information or offer in or in connection with the service.
+We accept no responsibility for any errors or omissions, or for the results obtained from the use of this information. All information in this web site is provided "as is" with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information, and without warranty of any kind, express or implied, including, but not limited to warranties of performance, merchantability and fitness for a particular purpose. Nothing herein shall to any extent substitute for the independent investigations and the sound technical and business judgment of the user(s). In no event shall BizzDuniya be liable for any direct, indirect, incidental, punitive, or consequential damages of any kind whatsoever with respect to the service, the materials and the products. User(s) of this site must hereby acknowledge that any reliance upon any content shall be at their sole risk.
+The information presented here has been compiled from publicly aired and published sources. BizzDuniya respects these sources and is in no way trying to infringe on the respective copyrights or businesses of these entities. BizzDuniya reserves the right, in its sole discretion and without any obligation, to make improvements to, or correct any error or omissions in any portion of the service or the materials
+2. COPYRIGHT
+All content on this web site is the copyright of BizzDuniya except the third party content and link to third party web site on our website.
+3. DATA PROTECTION
+Personal information supplied by user(s) during the use of web site is governed by our privacy policy
+4. INTERACTION BETWEEN USERS
+BizzDuniya provides an on-line platform for exchanging information between buyers and suppliers of products and services. Web site does not represent the seller or the buyer in specific transactions and does not charge any commission for enabling any transaction. Web site does not control and is not liable to or responsible for the quality, safety, lawfulness or availability of the products or services offered for sale on the web site or the ability of the suppliers to complete a sale or the ability of buyers to complete a purchase
+5. LIMITATION OF LIABILITY/DISCLAIMER
+The features and services on the web site are provided on an "as is" and "as available" basis, and web site hereby expressly disclaims any and all warranties, express or implied, including but not limited to any warranties of condition, quality, durability, performance, accuracy, reliability, merchantability or fitness for a particular purpose. All such warranties, representations, conditions, undertakings and terms are hereby excluded. BizzDuniya makes no representations or warranties about the validity, accuracy, correctness, reliability, quality, stability, completeness of any information provided on or through the web site.BizzDuniya does not represent or warranty that the manufacture, importation, distribution, offer, display, purchase, sale and/or use of products or services offered or displayed on the web site does not violate any third party rights; and BizzDuniya makes no representations or warranties of any kind concerning any product or service offered or displayed on the web site. Any material downloaded or otherwise obtained through the web site is done at your sole discretion and risk and you are solely responsible for any damage to your computer system or loss of data that may result from the download of any such material. No advice or information, whether oral or written, obtained by you from web site or through or from the web site shall create any warranty not expressly stated herein.
+Under no circumstances shall web site be held liable for an delay or failure or disruption of the content or services delivered through the web site resulting directly or indirectly from acts of nature, forces or causes beyond its reasonable control, including without limitation, Internet failures, computer, telecommunications or any other equipment failures, electrical power failures, strikes, labor disputes, riots, insurrections, civil disturbances, shortages of labor or materials, fires, flood, storms, explosions, Acts of God, natural calamities, war, governmental actions, orders of domestic or foreign courts or tribunals or non-performance of third parties. User(s) hereby agree to indemnify and save web site, its affiliates, directors, officers and employees harmless, from any and all losses, claims, liabilities (including legal costs on a full indemnity basis) which may arise from your use of the web site (including but not limited to the display of your information on the web site) or from your breach of any of the terms and conditions of this Agreement. User(s) hereby further agree to indemnify and save web site, its affiliates, directors, officers and employees harmless, from any and all losses, claims, liabilities (including legal costs on a full indemnity basis) which may arise from your breach of any representations and warranties made by you to web site.
+User(s) hereby further agree to indemnify and save web site, its affiliates, directors, officers and employees harmless, from any and all losses, claims, liabilities (including legal costs on a full indemnity basis) which may arise, directly or indirectly, as a result of any claims asserted by Third Party Rights claimants or other third parties relating to products offered or displayed on the web site. User(s) hereby further agree that web site is not responsible and shall have no liability to it, for any material posted by others, including defamatory, offensive or illicit material and that the risk of damages from such material rests entirely with you. Web site reserves the right, at its own expense, to assume the exclusive defense and control of any matter otherwise subject to indemnification by you, in which event you shall cooperate with web site in asserting any available defenses.
+Web site shall not be liable for any special, direct, indirect, punitive, incidental or consequential damages or any damages whatsoever (including but not limited to damages for loss of profits or savings, business interruption, loss of information), whether in contract, negligence, tort, strict liability or otherwise or any other damages resulting from any of the following:
+•	The use or the inability to use the web site.
+•	Any defect in goods, samples, data, information or services purchased or obtained from a User(s) or a third-party service provider through the web site;
+•	Violation of Third Party Rights or claims or demands that User(s) manufacture, importation, distribution, offer, display, purchase, sale and/or use of products or services offered or displayed on the web site may violate or may be asserted to violate Third Party Rights; or claims by any party that they are entitled to defense or indemnification in relation to assertions of rights, demands or claims by Third Party Rights claimants.
+•	Unauthorized access by third parties to data or private information of any User(s).
+
+
+
+    </string>
+</resources>

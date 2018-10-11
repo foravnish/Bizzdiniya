@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/stroke"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp">
+        <Spinner
+            android:id="@+id/spiner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:paddingLeft="10dp"
+        android:layout_marginRight="15dp"
+        android:inputType="textMultiLine"
+        android:hint="Message"
+        android:layout_gravity="center"
+        android:gravity="top"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/stroke"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textColor="#fff"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/stroke2"
+        android:layout_marginTop="20dp"
+        android:text="Submit"/>
+
+</LinearLayout>

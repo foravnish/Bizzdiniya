@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/imgaeView"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY" />
+
+
+
+
+
+            <TextView
+                android:id="@+id/tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/strock_news"
+                android:fontFamily="@font/muli_semibold"
+                android:gravity="right"
+                android:text="Loading"
+                android:layout_marginRight="5dp"
+
+                android:layout_above="@+id/name"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Loading..."
+                android:textColor="@color/blue"
+                android:layout_below="@+id/imgaeView"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_below="@+id/name"
+                android:text="Loading..."
+                android:textColor="@color/grayText"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/calpic"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/desc"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:tint="@color/grayText"
+                android:background="@drawable/calender_n"
+                />
+
+            <TextView
+                android:id="@+id/offersText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_below="@+id/desc"
+                android:layout_toRightOf="@+id/calpic"
+                android:text="Loading..."
+                android:textColor="@color/grayText"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+    </ScrollView>
+
+    <!--</android.support.v7.widget.CardView>-->
+
+
+</LinearLayout>

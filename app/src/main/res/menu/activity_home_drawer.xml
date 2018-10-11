@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="My Profile" />
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="DashBoard" />
+        <item
+            android:id="@+id/nav_wishlist"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Wishlist" />
+        <item
+            android:id="@+id/nav_event"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Events" />
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="News" />
+        <item
+            android:id="@+id/nav_tradefare"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Trade Show" />
+        <item
+            android:id="@+id/nav_refer"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Refer a friend" />
+    </group>
+
+    <item android:title="Seller Section">
+        <menu>
+            <item
+                android:id="@+id/nav_maange"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Manage Business" />
+            <item
+                android:id="@+id/nav_product"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Add Products/Services" />
+
+            <item
+                android:id="@+id/nav_enquiry"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Enquiries" />
+
+            <item
+                android:id="@+id/nav_logs"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Call Logs" />
+            <item
+                android:id="@+id/nav_promote"
+                android:icon="@drawable/ic_menu_send"
+                android:visible="false"
+                android:title="Promote Business" />
+        </menu>
+    </item>
+    <item android:title="Buyer Section">
+        <menu>
+            <item
+                android:id="@+id/nav_post"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Post Your Req" />
+            <item
+                android:id="@+id/nav_search"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Search Products/ Services" />
+
+
+        </menu>
+    </item>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group1">
+
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_menu_share"
+                android:title="About Us" />
+            <item
+                android:id="@+id/nav_fedback"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Feedback" />
+
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Help Desk" />
+
+            <item
+                android:id="@+id/nav_tnc"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Terms &amp; Conditions" />
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Contact Us" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Logout" />
+
+    </group>
+
+
+</menu>
