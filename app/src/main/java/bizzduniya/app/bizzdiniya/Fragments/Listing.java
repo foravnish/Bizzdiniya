@@ -300,7 +300,7 @@ public class Listing extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         // response
-                        Log.d("ResposeListing", response);
+                        Log.d("ResposeListingnon", response);
                         Util.cancelPgDialog(dialog);
 
                         try {
@@ -389,8 +389,7 @@ public class Listing extends Fragment {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setCancelable(false);
-        Util.showPgDialog(dialog);
-
+       // Util.showPgDialog(dialog);
 
         dialog1 = new Dialog(getActivity());
         dialog1.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -516,7 +515,7 @@ public class Listing extends Fragment {
         args.putString("searc",searchSt);
         args.putString("value",value);
 
-        Listing fragment = new Listing();
+        ListingRecycleView fragment = new ListingRecycleView();
         fragment.setArguments(args);
 
         return fragment;

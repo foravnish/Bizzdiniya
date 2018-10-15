@@ -93,7 +93,7 @@ public class ListedPage extends Fragment {
         else if (getArguments().getString("search").toString().equalsIgnoreCase("no")) {
             Log.d("fdgdgdfgdfgdf","false");
             Log.d("fdgfgfgdgdfgdfgdf",getArguments().getString("value").toString());
-            adapter.addFrag(Listing.NewInstance(getArguments().getString("id").toString(), getArguments().getString("title").toString(),"no",getArguments().getString("value").toString()), "Listing");
+            adapter.addFrag(ListingRecycleView.NewInstance(getArguments().getString("id").toString(), getArguments().getString("title").toString(),"no",getArguments().getString("value").toString()), "Listing");
           //  adapter.addFrag(Offers.NewInstance(getArguments().getString("id").toString(),"no",getArguments().getString("id").toString()), "Offers");
             adapter.addFrag(GetBestQuote.NewInstance(getArguments().getString("id").toString(), getArguments().getString("title").toString(),"no",getArguments().getString("id").toString()), "Enquiry");
         }

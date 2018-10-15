@@ -86,6 +86,23 @@ public class SubCategory extends Fragment {
     final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
     final long PERIOD_MS = 3000; // time in milliseconds between successive task executions.
 
+
+
+    int position;
+    private static int NUM_PAGES=0;
+    private Handler handler=new Handler();
+    private Runnable runnale=new Runnable(){
+        public void run(){
+            viewPager2.setCurrentItem(position,true);
+            if(position>=NUM_PAGES ) position=0;
+            else position++;
+            // Move to the next page after 10s
+            handler.postDelayed(runnale, 3000);
+        }
+    };
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -95,7 +112,7 @@ public class SubCategory extends Fragment {
         expListView = (GridView) view.findViewById(R.id.lvExp);
         btnGetQuote = (Button) view.findViewById(R.id.btnGetQuote);
 
-
+        position=0;
         viewPager2 = (ViewPager) view.findViewById(R.id.slider2);
         indicator2 = (CirclePageIndicator)view.findViewById(R.id.indicat2);
 
@@ -129,7 +146,7 @@ public class SubCategory extends Fragment {
                         JSONArray jsonArray=response.getJSONArray("message");
                         for (int i=0;i<jsonArray.length();i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-
+                            NUM_PAGES=jsonArray.length();
 //                            hashMap = new HashMap<>();
 //                            hashMap.put("id",jsonObject.optString("id"));
 //                            hashMap.put("cat_id",jsonObject.optString("cat_id"));
@@ -153,24 +170,24 @@ public class SubCategory extends Fragment {
                             //mCustomPagerAdapter2.addData(AllBaner);
 
 
-                            final Handler handler = new Handler();
-                            final Runnable Update = new Runnable() {
-                                public void run() {
-                                    if (currentPage == AllBaner.size()) {
-                                        currentPage = 0;
-                                    }
-                                    viewPager2.setCurrentItem(currentPage++, true);
-                                }
-                            };
-
-                            timer = new Timer(); // This will create a new Thread
-                            timer .schedule(new TimerTask() { // task to be scheduled
-
-                                @Override
-                                public void run() {
-                                    handler.post(Update);
-                                }
-                            }, DELAY_MS, PERIOD_MS);
+//                            final Handler handler = new Handler();
+//                            final Runnable Update = new Runnable() {
+//                                public void run() {
+//                                    if (currentPage == AllBaner.size()) {
+//                                        currentPage = 0;
+//                                    }
+//                                    viewPager2.setCurrentItem(currentPage++, true);
+//                                }
+//                            };
+//
+//                            timer = new Timer(); // This will create a new Thread
+//                            timer .schedule(new TimerTask() { // task to be scheduled
+//
+//                                @Override
+//                                public void run() {
+//                                    handler.post(Update);
+//                                }
+//                            }, DELAY_MS, PERIOD_MS);
 
                         }
                     }
@@ -435,5 +452,15 @@ public class SubCategory extends Fragment {
 
 
 
+    public void onPause(){
+        super.onPause();
+        if(handler!=null)
+            handler.removeCallbacks(runnale);
+    }
+    public void onResume(){
+        super.onResume();
+        // Start auto screen slideshow after 1s
+        handler.postDelayed(runnale, 3000);
+    }
 
 }

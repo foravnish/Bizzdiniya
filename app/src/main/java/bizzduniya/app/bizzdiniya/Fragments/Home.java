@@ -153,6 +153,22 @@ public class Home extends Fragment implements View.OnClickListener {
     List<String > subCat=new ArrayList<>();
     CardView cardView1,eventcard;
     GridView lvExp2;
+
+    int position;
+    private static int NUM_PAGES=0;
+    private Handler handler=new Handler();
+    private Runnable runnale=new Runnable(){
+        public void run(){
+            viewPager2.setCurrentItem(position,true);
+            if(position>=NUM_PAGES ) position=0;
+            else position++;
+            // Move to the next page after 10s
+            handler.postDelayed(runnale, 3000);
+        }
+    };
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -217,6 +233,8 @@ public class Home extends Fragment implements View.OnClickListener {
         l_numerologists.setOnClickListener(this);
         l_astrologists = view.findViewById(R.id.l_astrologists);
         l_astrologists.setOnClickListener(this);
+
+        position=0;
 
         edu1.setOnClickListener(this);
         edu2.setOnClickListener(this);
@@ -658,7 +676,7 @@ public class Home extends Fragment implements View.OnClickListener {
                         JSONArray jsonArray=response.getJSONArray("message");
                         for (int i=0;i<jsonArray.length();i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-
+                            NUM_PAGES=jsonArray.length();
 //                            hashMap = new HashMap<>();
 //                            hashMap.put("id",jsonObject.optString("id"));
 //                            hashMap.put("cat_id",jsonObject.optString("cat_id"));
@@ -683,23 +701,23 @@ public class Home extends Fragment implements View.OnClickListener {
 
 
                         }
-                        final Handler handler = new Handler();
-
-                        final Runnable update = new Runnable() {
-
-                            public void run() {
-                                if (currentPage == AllBaner.size()) {
-                                    currentPage = 0;
-                                }
-                                viewPager2.setCurrentItem(currentPage++);
-                            }
-                        };
-                        new Timer().schedule(new TimerTask() {
-                            @Override
-                            public void run() {
-                                handler.post(update);
-                            }
-                        }, 100, 5000);
+//                        final Handler handler = new Handler();
+//
+//                        final Runnable update = new Runnable() {
+//
+//                            public void run() {
+//                                if (currentPage == AllBaner.size()) {
+//                                    currentPage = 0;
+//                                }
+//                                viewPager2.setCurrentItem(currentPage++);
+//                            }
+//                        };
+//                        new Timer().schedule(new TimerTask() {
+//                            @Override
+//                            public void run() {
+//                                handler.post(update);
+//                            }
+//                        }, 100, 5000);
 
 
                     }
@@ -1902,6 +1920,16 @@ public class Home extends Fragment implements View.OnClickListener {
             notifyDataSetChanged();
         }
 
+    }
+    public void onPause(){
+        super.onPause();
+        if(handler!=null)
+            handler.removeCallbacks(runnale);
+    }
+    public void onResume(){
+        super.onResume();
+        // Start auto screen slideshow after 1s
+        handler.postDelayed(runnale, 3000);
     }
 
 
