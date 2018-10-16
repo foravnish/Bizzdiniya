@@ -78,6 +78,7 @@ public class Feedback extends Fragment {
     String firstData="",stateData="";
     ArrayAdapter  aa;
     List<HashMap<String,String>> DataLoc;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -85,7 +86,6 @@ public class Feedback extends Fragment {
         View view= inflater.inflate(R.layout.fragment_feedback2, container, false);
 
         spinerCat= (Spinner) view.findViewById(R.id.spinerCat);
-//        state= (Spinner) view.findViewById(R.id.state);
         name=(EditText)view.findViewById(R.id.name);
         email=(EditText)view.findViewById(R.id.email);
         mobile=(EditText)view.findViewById(R.id.mobile);
@@ -254,12 +254,25 @@ public class Feedback extends Fragment {
             email.requestFocus();
             return false;
         }
+        else if (!email.getText().toString().trim().matches(emailPattern))
+        {
+            email.setError("Oops! Invalid Email Id");
+            email.requestFocus();
+            return false;
+        }
+
         else if (TextUtils.isEmpty(mobile.getText().toString()))
         {
             mobile.setError("Oops! Mobile blank");
             mobile.requestFocus();
             return false;
         }
+        else if (mobile.getText().toString().length() < 10) {
+            mobile.setError("Oops! Enter 10 digit Mobile No.");
+            mobile.requestFocus();
+            return false;
+        }
+
         else if (TextUtils.isEmpty(address.getText().toString()))
         {
             address.setError("Oops! Address blank");

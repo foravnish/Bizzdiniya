@@ -185,7 +185,7 @@ public class HelpDesk extends Fragment {
                         Fragment fragment= new HelpDesk();
                         FragmentManager manager=getActivity().getSupportFragmentManager();
                         FragmentTransaction ft=manager.beginTransaction().addToBackStack(null);
-                        ft.replace(R.id.container,fragment).commit();
+                        ft.replace(R.id.content_frame,fragment).commit();
 
                     }
                     else {

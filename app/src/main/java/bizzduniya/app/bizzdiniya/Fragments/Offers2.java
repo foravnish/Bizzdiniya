@@ -7,19 +7,28 @@ import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -27,6 +36,7 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.NetworkImageView;
+import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,12 +45,15 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import bizzduniya.app.bizzdiniya.R;
 import bizzduniya.app.bizzdiniya.Utils.Api;
 import bizzduniya.app.bizzdiniya.Utils.AppController;
 import bizzduniya.app.bizzdiniya.Utils.MyPrefrences;
 import bizzduniya.app.bizzdiniya.Utils.Util;
+
+import static android.text.Html.fromHtml;
 
 
 public class Offers2 extends Fragment {
@@ -50,152 +63,158 @@ public class Offers2 extends Fragment {
         // Required empty public constructor
     }
 
+    TextView tv1;
+    Button getQuotre;
+    EditText otherLoc,requirement,mobile,nameQ;
+    Spinner spiner;
     Dialog dialog;
-    List<HashMap<String,String>> AllProducts ;
-    GridView expListView;
-    JSONObject jsonObject1;
-    TextView textView;
-    ImageView imageNoListing;
-   // Adapter adapter;
+    Boolean falgArea=false;
+    LinearLayout linerOther,linerCat;
+    List<String> location = new ArrayList<String>();
+    List<HashMap<String, String>> DataLoc;
+    ArrayAdapter aa,subcat;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View  view= inflater.inflate(R.layout.fragment_offers_own, container, false);
-        Log.d("fgfdgdfgdfhgddfdfd",getArguments().getString("id"));
-//        Log.d("fgfdgdfgdfhgddfdfdg",getArguments().getString("fragmentKey"));
-       // Log.d("sdfsdfsdfsdgfsdfdfddfgs", HomeAct.title.getText().toString());
-        AllProducts = new ArrayList<>();
-        expListView = (GridView) view.findViewById(R.id.lvExp);
-//        textView = (TextView) view.findViewById(R.id.textView);
-        imageNoListing = (ImageView) view.findViewById(R.id.imageNoListing);
+
+
+        tv1=view.findViewById(R.id.tv1);
+
+
+        spiner=view.findViewById(R.id.spiner);
+        getQuotre=view.findViewById(R.id.getQuotre);
+        nameQ=view.findViewById(R.id.nameQ);
+        mobile=view.findViewById(R.id.mobile);
+        requirement=view.findViewById(R.id.requirement);
+        otherLoc=view.findViewById(R.id.otherLoc);
+        linerOther=view.findViewById(R.id.linerOther);
+
         dialog=new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         dialog.setCancelable(false);
-       // Util.showPgDialog(dialog);
 
-//        expListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Toast.makeText(getActivity(), "click", Toast.LENGTH_SHORT).show();
-//                    Fragment fragment=new ListingDetailsOffers();
-//                    Bundle bundle=new Bundle();
-//                    bundle.putString("company_id",AllProducts.get(i).get("company_id"));
-//                    bundle.putString("id",getArguments().getString("id"));
-////                bundle.putString("company_name",AllProducts.get(i).get("company_name"));
-////                bundle.putString("address",AllProducts.get(i).get("address"));
-////                bundle.putString("c1_mobile1",AllProducts.get(i).get("c1_mobile1"));
-////                bundle.putString("name",AllProducts.get(i).get("c1_fname")+" "+AllProducts.get(i).get("c1_fname")+" "+AllProducts.get(i).get("c1_lname"));
-//                    FragmentManager manager=getActivity().getSupportFragmentManager();
-//                    FragmentTransaction ft=manager.beginTransaction();
-//                    fragment.setArguments(bundle);
-//                    ft.replace(R.id.content_frame,fragment).addToBackStack(null).commit();
-//            }
-//        });
+        DataLoc=new ArrayList<>();
+
+
+//        Log.d("fdsgvdfgdfhd3",getArguments().getString("title"));
+        Log.d("fdsgvdfgdfhd4",getArguments().getString("id"));
+//        tv1.setText(getArguments().getString("title"));
 
 
 
 
-//        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
-//                Api.offer+"?companyId="+ getArguments().getString("fragmentKey")+"&cityId="+ MyPrefrences.getCityID(getActivity()), null, new Response.Listener<JSONObject>() {
-//
-//            @Override
-//            public void onResponse(JSONObject response) {
-//                Log.d("ResposeOffer2", response.toString());
-//                Util.cancelPgDialog(dialog);
-//                try {
-//                    // Parsing json object response
-//                    // response will be a json object
-////                    String name = response.getString("name");
-//                    HashMap<String,String> hashMap = null;
-//                    if (response.getString("status").equalsIgnoreCase("success")){
-//
-//                        JSONArray jsonArray=response.getJSONArray("message");
-//                        for (int i=0;i<jsonArray.length();i++) {
-//                            JSONObject jsonObject = jsonArray.getJSONObject(i);
-//
-//                            JSONObject jsonObject2=jsonObject.getJSONObject("comapnyDetails");
-//
-//
-//                            expListView.setVisibility(View.VISIBLE);
-//                            imageNoListing.setVisibility(View.GONE);
-//
-//                            hashMap = new HashMap<>();
-//                            hashMap.put("id", jsonObject.optString("id"));
-//                            hashMap.put("cat_id", jsonObject.optString("cat_id"));
-//                            hashMap.put("company_id", jsonObject.optString("company_id"));
-//                            hashMap.put("membership", jsonObject.optString("membership"));
-//                            hashMap.put("heading", jsonObject.optString("heading"));
-//                            hashMap.put("description", jsonObject.optString("description"));
-//                            hashMap.put("offer_type", jsonObject.optString("offer_type"));
-//                            hashMap.put("discount", jsonObject.optString("discount"));
-//                            hashMap.put("actual_price", jsonObject.optString("actual_price"));
-//                            hashMap.put("offer_price",jsonObject.optString("offer_price"));
-//                            hashMap.put("coupon_code",jsonObject.optString("coupon_code"));
-//                            hashMap.put("offer_from",jsonObject.optString("offer_from"));
-//                            hashMap.put("offer_to",jsonObject.optString("offer_to"));
-//                            hashMap.put("image",jsonObject.optString("image"));
-//                            hashMap.put("cat_name",jsonObject.optString("cat_name"));
-//                            hashMap.put("posted_date",jsonObject.optString("posted_date"));
-//                            hashMap.put("company_name", jsonObject2.optString("company_name"));
-//                            hashMap.put("address", jsonObject2.optString("address"));
-//                            hashMap.put("c1_mobile1", jsonObject2.optString("c1_mobile1"));
-//                            hashMap.put("new_keywords", jsonObject2.optString("new_keywords"));
-//                            hashMap.put("premium", jsonObject2.optString("premium"));
-//                            hashMap.put("c1_fname", jsonObject2.optString("c1_fname")+" "+jsonObject2.optString("c1_mname")+" "+jsonObject2.optString("c1_lname"));
-//
-//                            adapter = new Adapter();
-//                            expListView.setAdapter(adapter);
-//                            AllProducts.add(hashMap);
-//
-//
-//                        }
-//                        //  AllEvents.add(hashMap);
-//                    }
-//                    else if (response.getString("status").equalsIgnoreCase("failure")){
-//                        //Toast.makeText(getActivity(), "offer list not available", Toast.LENGTH_SHORT).show();
-//                        expListView.setVisibility(View.GONE);
-//                        imageNoListing.setVisibility(View.VISIBLE);
-//
-//                    }
-//
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                    Toast.makeText(getActivity(),
-//                            "Error: " + e.getMessage(),
-//                            Toast.LENGTH_LONG).show();
-//                    Util.cancelPgDialog(dialog);
-//                }
-//
-//            }
-//        }, new Response.ErrorListener() {
-//
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                VolleyLog.d("Respose", "Error: " + error.getMessage());
-//                Toast.makeText(getActivity(),
-//                        "Error! Please Connect to the internet", Toast.LENGTH_SHORT).show();
-//                // hide the progress dialog
-//                Util.cancelPgDialog(dialog);
-//
-//            }
-//        });
+        spiner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (spiner.getSelectedItem().toString().equalsIgnoreCase("Other Area")) {
+                    linerOther.setVisibility(View.VISIBLE);
+                    falgArea=true;
+                }
+                else{
+                    linerOther.setVisibility(View.GONE);
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+        getQuotre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (!spiner.getSelectedItem().toString().equalsIgnoreCase("Select Area")){
+                    if(checkValidation()) {
+                        sendQuotation();
+                    }
+                }
+                else {
+                    Toast.makeText(getActivity(), "Please select any area.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
+                Api.location+"?cityId=1", null, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.d("Respose", response.toString());
+
+                Util.cancelPgDialog(dialog);
+                try {
+                    // Parsing json object response
+                    // response will be a json object
+//                    String name = response.getString("name");
+
+                    if (response.getString("status").equalsIgnoreCase("success")){
+
+                        location.clear();
+                        HashMap<String, String> map2 = new HashMap<>();
+                        map2.put("category", "");
+                        DataLoc.add(map2);
+                        location.add("Select Area");
+
+                        JSONArray jsonArray=response.getJSONArray("message");
+                        for (int i=0;i<jsonArray.length();i++){
+                            JSONObject jsonObject=jsonArray.getJSONObject(i);
+
+                            HashMap<String,String> map=new HashMap();
+                            map.put("id",jsonObject.optString("id"));
+                            map.put("state_id",jsonObject.optString("state_id"));
+                            map.put("city_id",jsonObject.optString("city_id"));
+                            map.put("location",jsonObject.optString("location"));
+
+                            location.add(jsonObject.optString("location"));
+
+                            DataLoc.add(map);
+
+                            aa = new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,location);
+                            aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            spiner.setAdapter(aa);
+
+                        }
+                        HashMap<String, String> map3 = new HashMap<>();
+                        map3.put("category", "");
+                        DataLoc.add(map3);
+                        location.add("Other Area");
+
+                    }
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getActivity(),
+                            "Error: " + e.getMessage(),
+                            Toast.LENGTH_LONG).show();
+                    Util.cancelPgDialog(dialog);
+                }
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d("Respose", "Error: " + error.getMessage());
+                Toast.makeText(getActivity(),
+                        "Error! Please Connect to the internet", Toast.LENGTH_SHORT).show();
+                // hide the progress dialog
+                Util.cancelPgDialog(dialog);
+
+            }
+        });
 
         // Adding request to request queue
-//        jsonObjReq.setShouldCache(false);
-//        AppController.getInstance().addToRequestQueue(jsonObjReq);
-
-//        expListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//
-//                Toast.makeText(getActivity(), "click", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
-
-
+        jsonObjReq.setShouldCache(false);
+        AppController.getInstance().addToRequestQueue(jsonObjReq);
 
 
         return view;
@@ -215,127 +234,132 @@ public class Offers2 extends Fragment {
     }
 
 
+    private boolean checkValidation() {
+        if (TextUtils.isEmpty(nameQ.getText().toString()))
+        {
+            nameQ.setError("Oops! Name blank");
+            nameQ.requestFocus();
+            return false;
+        }
+        else if (TextUtils.isEmpty(mobile.getText().toString()))
+        {
+            mobile.setError("Oops! Mobile blank");
+            mobile.requestFocus();
+            return false;
+        }
 
-//    class Adapter extends BaseAdapter {
-//
-//        LayoutInflater inflater;
-//        TextView name,date,discount,desc,catName,address,sub_cat;
-//        //MaterialRatingBar rating;
-//        NetworkImageView banner;
-//        LinearLayout linerLayout;
-//        CardView cardView;
-//        ImageView prem;
-//
-//        Adapter() {
-//            inflater = (LayoutInflater) getActivity().getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//
-//        }
-//
-//        @Override
-//        public int getCount() {
-//            return AllProducts.size();
-//        }
-//
-//        @Override
-//        public Object getItem(int position) {
-//            return AllProducts.get(position);
-//        }
-//
-//        @Override
-//        public long getItemId(int position) {
-//            return position;
-//        }
-//
-//        @Override
-//        public View getView(final int position, View convertView, ViewGroup parent) {
-//
-//
-//            convertView=inflater.inflate(R.layout.list_my_offers,parent,false);
-//
-//            name=convertView.findViewById(R.id.name);
-//            date=convertView.findViewById(R.id.date);
-//            discount=convertView.findViewById(R.id.discount);
-//            desc=convertView.findViewById(R.id.desc);
-//            //  banner=convertView.findViewById(R.id.banner);
-//            catName=convertView.findViewById(R.id.catName);
-//            linerLayout=convertView.findViewById(R.id.linerLayout);
-//            cardView=convertView.findViewById(R.id.cardView);
-//            address=convertView.findViewById(R.id.address);
-//            prem=convertView.findViewById(R.id.prem);
-//            sub_cat=convertView.findViewById(R.id.sub_cat);
-//
-//           // catName.setText(HomeAct.title.getText().toString());
-//            name.setText(AllProducts.get(position).get("heading"));
-//            date.setText(AllProducts.get(position).get("posted_date"));
-//            sub_cat.setText(AllProducts.get(position).get("company_name"));
-//            catName.setText(AllProducts.get(position).get("cat_name"));
-//            address.setText(AllProducts.get(position).get("address"));
-//
-//            if (AllProducts.get(position).get("discount").equalsIgnoreCase("Select Discount")){
-//                discount.setText("₹ "+AllProducts.get(position).get("offer_price"));
-//            }
-//            else {
-//                discount.setText(AllProducts.get(position).get("discount"));
-//            }
-//            desc.setText(AllProducts.get(position).get("description"));
-//
-//            ImageLoader imageLoader = AppController.getInstance().getImageLoader();
-//            // banner.setImageUrl(AllProducts.get(position).get("image"),imageLoader);
-//
-//            if (AllProducts.get(position).get("premium").equalsIgnoreCase("Yes")){
-//
-//                cardView.setCardBackgroundColor(Color.parseColor("#FFFDF4BE"));
-//                linerLayout.setBackgroundColor(Color.parseColor("#FFFDF4BE"));
-//                prem.setVisibility(View.VISIBLE);
-//            }
-//            else if (AllProducts.get(position).get("premium").equalsIgnoreCase("No")){
-//
-//                cardView.setCardBackgroundColor(Color.parseColor("#ffffff"));
-//                linerLayout.setBackgroundColor(Color.parseColor("#ffffff"));
-//                prem.setVisibility(View.GONE);
-//            }
-//
-////            linerLayout.setOnClickListener(new View.OnClickListener() {
-////                @Override
-////                public void onClick(View view) {
-////                    Fragment fragment=new ListingDetailsOffers();
-////                    Bundle bundle=new Bundle();
-//////                    bundle.putString("company_id",AllProducts.get(position).get("company_id"));
-//////                    bundle.putString("id",getArguments().getString("id"));
-////
-////
-////                    bundle.putString("id",AllProducts.get(position).get("id"));
-////                    bundle.putString("company_name",AllProducts.get(position).get("company_name"));
-////                    bundle.putString("address",AllProducts.get(position).get("address"));
-////                    bundle.putString("c1_mobile1",AllProducts.get(position).get("c1_mobile1"));
-////                    // bundle.putString("rating",AllProducts.get(position).get("rating"));
-////                    //bundle.putString("totlauser",AllProducts.get(position).get("totlauser"));
-////                    bundle.putString("c1_fname",AllProducts.get(position).get("c1_fname"));
-////
-////
-////                    bundle.putString("company_name",AllProducts.get(position).get("company_name"));
-////                    bundle.putString("new_keywords",AllProducts.get(position).get("new_keywords"));
-//////                bundle.putString("address",AllProducts.get(i).get("address"));
-//////                bundle.putString("c1_mobile1",AllProducts.get(i).get("c1_mobile1"));
-//////                bundle.putString("name",AllProducts.get(i).get("c1_fname")+" "+AllProducts.get(i).get("c1_fname")+" "+AllProducts.get(i).get("c1_lname"));
-////                    FragmentManager manager=getActivity().getSupportFragmentManager();
-////                    FragmentTransaction ft=manager.beginTransaction();
-////                    fragment.setArguments(bundle);
-////                    ft.replace(R.id.content_frame,fragment).addToBackStack(null).commit();
-////                }
-////            });
-////            final Typeface tvFont = Typeface.createFromAsset(getActivity().getAssets(), "comicz.ttf");
-////            title.setTypeface(tvFont);
-//            final Typeface tvFont = Typeface.createFromAsset(getActivity().getAssets(), "muli_bold.ttf");
-//            final Typeface tvFont2 = Typeface.createFromAsset(getActivity().getAssets(), "muli.ttf");
-//            name.setTypeface(tvFont);
-//            desc.setTypeface(tvFont2);
-//            date.setTypeface(tvFont2);
-//
-//            return convertView;
-//        }
-//    }
+        else if (mobile.getText().toString().length()!=10){
+            mobile.setError("Oops! Enter Valid Mobile No.");
+            return false;
+        }
 
+        else if (TextUtils.isEmpty(requirement.getText().toString()))
+        {
+            requirement.setError("Oops! Requirement blank");
+            requirement.requestFocus();
+            return false;
+        }
+
+
+
+
+        return true;
+    }
+
+    private void sendQuotation() {
+        Util.showPgDialog(dialog);
+        StringRequest postRequest = new StringRequest(Request.Method.POST, Api.categoryQuote,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response) {
+                        // response
+                        Log.d("Response", response);
+                        Util.cancelPgDialog(dialog);
+                        try {
+                            JSONObject jsonObject=new JSONObject(response);
+                            if (jsonObject.getString("status").equalsIgnoreCase("success")){
+
+                                errorDialog("Your Quotation successfully posted");
+
+//                                Toast.makeText(getActivity(), "Your Quotation successfully posted", Toast.LENGTH_SHORT).show();
+//                                Intent intent=new Intent(getActivity(),HomeAct.class);
+//                                startActivity(intent);
+                            }
+                            else{
+                                Toast.makeText(getActivity(),jsonObject.getString("message") , Toast.LENGTH_SHORT).show();
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // error
+                        Toast.makeText(getActivity(), "Error! Please connect to the Internet.", Toast.LENGTH_SHORT).show();
+                        Log.d("fsdgsdgdfg",error.toString());
+                        Util.cancelPgDialog(dialog);
+                    }
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams()
+            {
+                Map<String, String>  params = new HashMap<String, String>();
+
+
+                params.put("subCatId", getArguments().getString("id"));
+                params.put("fullName", nameQ.getText().toString());
+                params.put("mobile", mobile.getText().toString());
+                params.put("requirement", requirement.getText().toString());
+                params.put("email", "abc");
+
+                if (falgArea==true){
+                    params.put("city", otherLoc.getText().toString());
+                }
+                else if (falgArea==false) {
+                    params.put("city", spiner.getSelectedItem().toString());
+                }
+
+                return params;
+            }
+        };
+        postRequest.setRetryPolicy(new DefaultRetryPolicy(27000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        postRequest.setShouldCache(false);
+
+        AppController.getInstance().addToRequestQueue(postRequest);
+    }
+
+    private void errorDialog(String res) {
+
+        final Dialog dialog = new Dialog(getActivity());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.alertdialogcustom2);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        TextView text = (TextView) dialog.findViewById(R.id.msg_txv);
+        text.setText(fromHtml(res));
+        Button ok = (Button) dialog.findViewById(R.id.btn_ok);
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                dialog.dismiss();
+                Fragment fragment = new Home();
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                FragmentTransaction ft = manager.beginTransaction();
+                ft.replace(R.id.content_frame, fragment).commit();
+
+
+            }
+        });
+        dialog.show();
+
+    }
 
 
 }

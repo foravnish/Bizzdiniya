@@ -21,14 +21,17 @@
         <item
             android:id="@+id/nav_wishlist"
             android:icon="@drawable/ic_menu_slideshow"
+            android:visible="false"
             android:title="Wishlist" />
         <item
             android:id="@+id/nav_event"
             android:icon="@drawable/ic_menu_manage"
+            android:visible="false"
             android:title="Events" />
         <item
             android:id="@+id/nav_news"
             android:icon="@drawable/ic_menu_manage"
+            android:visible="false"
             android:title="News" />
         <item
             android:id="@+id/nav_tradefare"
@@ -37,7 +40,7 @@
         <item
             android:id="@+id/nav_refer"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Refer a friend" />
+            android:title="Share App" />
     </group>
 
     <item android:title="Seller Section">
@@ -59,6 +62,7 @@
             <item
                 android:id="@+id/nav_logs"
                 android:icon="@drawable/ic_menu_send"
+                android:visible="false"
                 android:title="Call Logs" />
             <item
                 android:id="@+id/nav_promote"

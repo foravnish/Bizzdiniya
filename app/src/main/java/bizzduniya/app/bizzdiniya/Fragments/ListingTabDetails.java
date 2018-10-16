@@ -81,8 +81,8 @@ public class ListingTabDetails extends Fragment {
 
             Log.d("fdgdgdfgdfgdf","true");
 //            adapter.addFrag(ListingDetails.NewInstance(getArguments().getString("id").toString(), getArguments().getString("company_name").toString(), getArguments().getString("address").toString(), getArguments().getString("c1_mobile1").toString(), getArguments().getString("rating").toString(), getArguments().getString("totlauser").toString(), getArguments().getString("name").toString(),getArguments().getString("keywords"),getArguments().getString("locationName"),getArguments().getString("liking"),getArguments().getString("std_code"),getArguments().getString("pincode"),getArguments().getString("companyLogo"),   getArguments().getString("payment_mode"),getArguments().getString("closing_time"),getArguments().getString("opening_time"),getArguments().getString("closing_time2"),getArguments().getString("opening_time2"),getArguments().getString("min_order_amnt"),getArguments().getString("min_order_qty"),getArguments().getString("closing_days"),getArguments().getString("latitude"),getArguments().getString("longitude"),getArguments().getString("status"),getArguments().getString("jsonArray2")), "DETAILS");
-            adapter.addFrag(ListingDetails.NewInstance(getArguments().getString("id").toString(),getArguments().getString("company_name").toString()), "DETAILS");
-            adapter.addFrag(Offers2.NewInstance(getArguments().getString("id").toString(),getArguments().getString("company_name").toString()), "OFFERS");
+            adapter.addFrag(ListingDetails.NewInstance(getArguments().getString("id").toString(),getArguments().getString("company_name").toString()), "Enquiry");
+            adapter.addFrag(Offers2.NewInstance(getArguments().getString("id").toString(),getArguments().getString("company_name").toString()), "Enquiry");
 //            adapter.addFrag(Offers2.NewInstance(getArguments().getString("id").toString(),getArguments().getString("company_name").toString(), getArguments().getString("address").toString()), "OFFERS");
 
 

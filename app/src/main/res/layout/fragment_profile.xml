@@ -86,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="2"
+                android:weightSum="3"
                 android:padding="12dp"
                 android:background="#ecd6c7"
                 android:layout_marginTop="10dp"
@@ -114,7 +114,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/tv_user_id"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:fontFamily="@font/muli_bold"
                     android:text="#"
                     android:textColor="@color/black"
@@ -127,7 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="2"
+                android:weightSum="3"
                 android:padding="12dp"
                 android:background="#fff"
                 >
@@ -155,7 +155,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/tv_city"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:fontFamily="@font/muli_bold"
                     android:text=""
                     android:textColor="@color/black"
@@ -168,7 +168,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="2"
+                android:weightSum="3"
                 android:padding="12dp"
                 android:background="#ecd6c7">
 
@@ -195,7 +195,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/tv_dob"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:fontFamily="@font/muli_bold"
                     android:text=" "
                     android:textColor="@color/black"
@@ -207,7 +207,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="2"
+                android:weightSum="3"
                 android:padding="12dp"
                 android:background="#fff">
 
@@ -234,7 +234,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/tv_city"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:fontFamily="@font/muli_bold"
                     android:text=" "
                     android:textColor="@color/black"
@@ -246,7 +246,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="2"
+                android:weightSum="3"
                 android:padding="12dp"
                 android:background="#ecd6c7">
 
@@ -273,7 +273,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/tv_state"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:fontFamily="@font/muli_bold"
                     android:text=" "
                     android:textColor="@color/black"
@@ -285,7 +285,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="2"
+                android:weightSum="3"
                 android:padding="12dp"
                 android:background="#fff">
 
@@ -312,7 +312,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/tv_pincode"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:fontFamily="@font/muli_bold"
                     android:text=" "
                     android:textColor="@color/black"

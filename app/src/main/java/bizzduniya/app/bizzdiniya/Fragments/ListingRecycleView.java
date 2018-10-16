@@ -20,7 +20,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -34,6 +36,8 @@ import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONArray;
@@ -110,7 +114,8 @@ public class ListingRecycleView extends Fragment {
         fabButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                popLocation();
+                //popLocation();
+
 
             }
         });
@@ -169,98 +174,98 @@ public class ListingRecycleView extends Fragment {
         final RadioButton areaShow = (RadioButton) dialog1.findViewById(R.id.areaShow);
 
 
-//        lvExp.addFooterView(footerView);
+       // lvExp.addFooterView(footerView);
 
 
-//        nearShow.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                lvExp.setVisibility(View.INVISIBLE);
-//                bubmit.setVisibility(View.INVISIBLE);
-//                linearGPS.setVisibility(View.VISIBLE);
-//                nearShow.setChecked(true);
-//                areaShow.setChecked(false);
-//
-//            }
-//        });
-//
-//        areaShow.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                lvExp.setVisibility(View.VISIBLE);
-//                bubmit.setVisibility(View.VISIBLE);
-//                linearGPS.setVisibility(View.GONE);
-//                nearShow.setChecked(false);
-//                areaShow.setChecked(true);
-//            }
-//        });
+        nearShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lvExp.setVisibility(View.INVISIBLE);
+                bubmit.setVisibility(View.INVISIBLE);
+                linearGPS.setVisibility(View.VISIBLE);
+                nearShow.setChecked(true);
+                areaShow.setChecked(false);
+
+            }
+        });
+
+        areaShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lvExp.setVisibility(View.VISIBLE);
+                bubmit.setVisibility(View.VISIBLE);
+                linearGPS.setVisibility(View.GONE);
+                nearShow.setChecked(false);
+                areaShow.setChecked(true);
+            }
+        });
 
 
-//        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
-//                Api.catIdToLocation+"?cityId="+"1"+"&catId="+getArguments().getString("fragmentKey"), null, new Response.Listener<JSONObject>() {
-//
-//            @Override
-//            public void onResponse(JSONObject response) {
-//                Log.d("Respose", response.toString());
-//                dialog1.show();
-//                Util.cancelPgDialog(dialog);
-//                try {
-//                    // Parsing json object response
-//                    // response will be a json object
-////                    String name = response.getString("name");
-//
-//                    if (response.getString("status").equalsIgnoreCase("success")){
-//
-//                        JSONArray jsonArray=response.getJSONArray("message");
-//                        AllProductsLocation.clear();
-//                        for (int i=0;i<jsonArray.length();i++){
-//                            JSONObject jsonObject=jsonArray.getJSONObject(i);
-//
-//                            HashMap<String,String> map=new HashMap();
-//                            map.put("id",jsonObject.optString("id"));
-////                            map.put("state_id",jsonObject.optString("state_id"));
-////                            map.put("city_id",jsonObject.optString("city_id"));
-//                            map.put("location",jsonObject.optString("location"));
-//
-//
-//                            AdapterLocation  adapter=new AdapterLocation ();
-//                            lvExp.setAdapter(adapter);
-//                            AllProductsLocation.add(map);
-//
-//                        }
-//
-//                    }
-//                    else {
-//                        Toast.makeText(getActivity(), "No Area Here...", Toast.LENGTH_LONG).show();
-//                    }
-//
-//
-//
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                    Toast.makeText(getActivity(),
-//                            "Error: " + e.getMessage(),
-//                            Toast.LENGTH_LONG).show();
-//                    Util.cancelPgDialog(dialog);
-//                }
-//
-//            }
-//        }, new Response.ErrorListener() {
-//
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                VolleyLog.d("Respose", "Error: " + error.getMessage());
-//                Toast.makeText(getActivity(),
-//                        "Error! Please Connect to the internet", Toast.LENGTH_SHORT).show();
-//                // hide the progress dialog
-//                Util.cancelPgDialog(dialog);
-//
-//            }
-//        });
-//
-//        // Adding request to request queue
-//        jsonObjReq.setShouldCache(false);
-//        AppController.getInstance().addToRequestQueue(jsonObjReq);
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
+                Api.catIdToLocation+"?cityId="+"1"+"&catId="+getArguments().getString("fragmentKey"), null, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.d("Respose", response.toString());
+                dialog1.show();
+                Util.cancelPgDialog(dialog);
+                try {
+                    // Parsing json object response
+                    // response will be a json object
+//                    String name = response.getString("name");
+
+                    if (response.getString("status").equalsIgnoreCase("success")){
+
+                        JSONArray jsonArray=response.getJSONArray("message");
+                        AllProductsLocation.clear();
+                        for (int i=0;i<jsonArray.length();i++){
+                            JSONObject jsonObject=jsonArray.getJSONObject(i);
+
+                            HashMap<String,String> map=new HashMap();
+                            map.put("id",jsonObject.optString("id"));
+//                            map.put("state_id",jsonObject.optString("state_id"));
+//                            map.put("city_id",jsonObject.optString("city_id"));
+                            map.put("location",jsonObject.optString("location"));
+
+
+                            AdapterLocation  adapter=new AdapterLocation ();
+                            lvExp.setAdapter(adapter);
+                            AllProductsLocation.add(map);
+
+                        }
+
+                    }
+                    else {
+                        Toast.makeText(getActivity(), "No Area Here...", Toast.LENGTH_LONG).show();
+                    }
+
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getActivity(),
+                            "Error: " + e.getMessage(),
+                            Toast.LENGTH_LONG).show();
+                    Util.cancelPgDialog(dialog);
+                }
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d("Respose", "Error: " + error.getMessage());
+                Toast.makeText(getActivity(),
+                        "Error! Please Connect to the internet", Toast.LENGTH_SHORT).show();
+                // hide the progress dialog
+                Util.cancelPgDialog(dialog);
+
+            }
+        });
+
+        // Adding request to request queue
+        jsonObjReq.setShouldCache(false);
+        AppController.getInstance().addToRequestQueue(jsonObjReq);
 
 
 
@@ -465,11 +470,10 @@ public class ListingRecycleView extends Fragment {
                 return params;
             }
         };
-        postRequest.setRetryPolicy(new DefaultRetryPolicy(27000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+       // postRequest.setRetryPolicy(new DefaultRetryPolicy(27000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         postRequest.setShouldCache(false);
 
         AppController.getInstance().addToRequestQueue(postRequest);
-
 
     }
 
@@ -520,6 +524,85 @@ public class ListingRecycleView extends Fragment {
         }
     }
 
+    class AdapterLocation extends BaseAdapter {
+
+        LayoutInflater inflater;
+        CheckBox textviwe;
+
+        Boolean flag=false;
+        AdapterLocation() {
+            inflater = (LayoutInflater) getActivity().getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+//            if (inflater == null) {
+//                throw new AssertionError("LayoutInflater not found.");
+//            }
+        }
+
+        @Override
+        public int getCount() {
+            return AllProductsLocation.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return AllProductsLocation.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+
+
+            convertView=inflater.inflate(R.layout.list_location,parent,false);
+
+            textviwe=convertView.findViewById(R.id.textviwe);
+            textviwe.setText(AllProductsLocation.get(position).get("location"));
+
+            data.clear();
+            textviwe.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Log.d("sdfsdfsdfgsgs",AllProductsLocation.get(position).get("id"));
+                    data.add(AllProductsLocation.get(position).get("id"));
+                }
+            });
+
+            bubmit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    value=data.toString().replace("[","").replace("]","").replace(" ","");
+                    Log.d("fgdgdfgdfgdfgdfg",value.toString());
+                    Log.d("fgdgdfdfdfgdfgdfgdfg",getArguments().getString("fragmentKey"));
+                    // listingDataOfCom(getArguments().getString("value"));
+                    dialog1.dismiss();
+
+                    Fragment fragment=new ListedPage();
+                    FragmentManager manager=getActivity().getSupportFragmentManager();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("id",getArguments().getString("fragmentKey"));
+                    bundle.putString("title",getArguments().getString("title"));
+                    bundle.putString("search","no");
+                    bundle.putString("keyowd","");
+                    bundle.putString("value",value.toString());
+                    FragmentTransaction ft=manager.beginTransaction();
+                    fragment.setArguments(bundle);
+                    ft.replace(R.id.content_frame,fragment).addToBackStack(null).commit();
+
+                    //  data.clear();
+
+
+                }
+            });
+
+            return convertView;
+        }
+    }
 
 
 }

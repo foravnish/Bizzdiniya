@@ -1637,7 +1637,7 @@ public class Home extends Fragment implements View.OnClickListener {
         FragmentManager manager=getFragmentManager();
         Bundle bundle = new Bundle();
         bundle.putString("id",s);
-        bundle.putString("title","Bizz Diniya");
+        bundle.putString("title","Bizz Duniya");
         bundle.putString("search","no");
         bundle.putString("keyowd","");
         bundle.putString("value","");

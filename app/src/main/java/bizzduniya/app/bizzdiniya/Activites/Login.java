@@ -111,7 +111,7 @@ public class Login extends AppCompatActivity {
                                                 JSONObject jsonObject1 = jsonArray.optJSONObject(i);
 
 
-                                                Toast.makeText(getApplicationContext(), "Login Successfully...", Toast.LENGTH_SHORT).show();
+                                       //         Toast.makeText(getApplicationContext(), "Login Successfully...", Toast.LENGTH_SHORT).show();
 
                                                 MyPrefrences.setUserLogin(getApplicationContext(), true);
                                                 MyPrefrences.setUserID(getApplicationContext(), jsonObject1.optString("id").toString());

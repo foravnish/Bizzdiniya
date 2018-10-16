@@ -22,6 +22,7 @@ import com.romainpiel.shimmer.ShimmerTextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import bizzduniya.app.bizzdiniya.Utils.Api;
 import bizzduniya.app.bizzdiniya.Utils.AppController;
 
 public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.MyViewHolder> implements AdapterView.OnClickListener
@@ -91,10 +92,21 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.MyView
         holder.area.setText(products_arrayList.get(position).get("exporter"));
         holder.subcatListing.setText(products_arrayList.get(position).get("exporterText"));
 
-        ImageLoader imageLoader = AppController.getInstance().getImageLoader();
-        holder.imgaeView.setImageUrl(products_arrayList.get(position).get("logo"),imageLoader);
-        holder.flagIcon.setImageUrl(products_arrayList.get(position).get("country_flag"),imageLoader);
+        Log.d("dfsvgdvgdgdfgdf",products_arrayList.get(position).get("logo"));
 
+
+        ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+
+//        holder.imgaeView.setImageUrl(products_arrayList.get(position).get("logo"),imageLoader);
+//        holder.flagIcon.setImageUrl(products_arrayList.get(position).get("country_flag"),imageLoader);
+
+        if ((products_arrayList.get(position).get("logo").equalsIgnoreCase(Api.IMAGE_URL))){
+            holder.imgaeView.setBackgroundResource(R.drawable.no_listing);
+        }
+        else{
+            holder.imgaeView.setImageUrl(products_arrayList.get(position).get("logo"), imageLoader);
+        }
+        holder.flagIcon.setImageUrl(products_arrayList.get(position).get("country_flag"), imageLoader);
 
 
     }

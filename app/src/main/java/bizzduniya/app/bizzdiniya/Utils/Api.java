@@ -9,6 +9,7 @@ public class Api {
 
 
     public static String BASEURL2="https://www.bizzduniya.com/Api/index.php/Main/";
+    public static String IMAGE_URL="https://www.bizzduniya.com/upload_images/company/portfolio/";
 
     public static String categoryList=BASEURL2+"categoryList";
     public static String subcategoryByCategoryId=BASEURL2+"subcategoryByCategoryId";
