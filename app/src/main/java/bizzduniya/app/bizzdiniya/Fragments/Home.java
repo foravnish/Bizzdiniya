@@ -986,8 +986,6 @@ public class Home extends Fragment implements View.OnClickListener {
 
 
 
-
-
         return view;
     }
 
@@ -1575,10 +1573,6 @@ public class Home extends Fragment implements View.OnClickListener {
                 fragment=new ListedPage();
                 replce2("397");
                 break;
-
-
-
-
             case R.id.argo4:
                 fragment=new ListedPage();
                 replce2("229");
@@ -1591,10 +1585,6 @@ public class Home extends Fragment implements View.OnClickListener {
                 fragment=new ListedPage();
                 replce2("397");
                 break;
-
-
-
-
             case R.id.edu4:
                 fragment=new ListedPage();
                 replce2("225");
@@ -1784,8 +1774,10 @@ public class Home extends Fragment implements View.OnClickListener {
         public CustomPagerAdapter2(Context context) {
             mContext = context;
 
-
             mLayoutInflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            if (mLayoutInflater == null) {
+                throw new AssertionError("LayoutInflater not found.");
+            }
         }
 
         @Override
@@ -1864,6 +1856,10 @@ public class Home extends Fragment implements View.OnClickListener {
         public CustomPagerAdapter(Context context) {
             mContext = context;
             mLayoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            if (mLayoutInflater == null) {
+                throw new AssertionError("LayoutInflater not found.");
+            }
+
         }
 
 

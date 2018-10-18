@@ -114,9 +114,7 @@ public class ListingRecycleView extends Fragment {
         fabButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //popLocation();
-
-
+                popLocation();
             }
         });
 
@@ -164,7 +162,7 @@ public class ListingRecycleView extends Fragment {
         View footerView = ((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.footer_layout, null, false);
 
         products_arrayList = new ArrayList<>();
-      //  lvExp = (ListView) dialog1.findViewById(R.id.lvExp);
+        lvExp = (ListView) dialog1.findViewById(R.id.lvExp);
         bubmit = (Button) footerView.findViewById(R.id.bubmit);
         Button bubmit2 = (Button) dialog1.findViewById(R.id.bubmit2);
         TextView text1 = (TextView) dialog1.findViewById(R.id.text1);
@@ -174,7 +172,7 @@ public class ListingRecycleView extends Fragment {
         final RadioButton areaShow = (RadioButton) dialog1.findViewById(R.id.areaShow);
 
 
-       // lvExp.addFooterView(footerView);
+        lvExp.addFooterView(footerView);
 
 
         nearShow.setOnClickListener(new View.OnClickListener() {
@@ -266,8 +264,6 @@ public class ListingRecycleView extends Fragment {
         // Adding request to request queue
         jsonObjReq.setShouldCache(false);
         AppController.getInstance().addToRequestQueue(jsonObjReq);
-
-
 
     }
 
