@@ -195,14 +195,12 @@ public class ListingSearch extends Fragment {
                                 map.put("payment_mode3","");
                             }
 
-
                             if (jsonObject.has("payment_mode4")){
                                 map.put("payment_mode4",jsonObject.optString("payment_mode4"));
                             }
                             else{
                                 map.put("payment_mode4","");
                             }
-
 
                             if (jsonObject.has("payment_mode5")){
                                 map.put("payment_mode5",jsonObject.optString("payment_mode5"));
@@ -268,9 +266,6 @@ public class ListingSearch extends Fragment {
         jsonObjReq.setShouldCache(false);
         AppController.getInstance().addToRequestQueue(jsonObjReq);
 
-
-
-//
 
 //        expListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override

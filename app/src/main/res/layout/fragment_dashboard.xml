@@ -5,6 +5,7 @@
     android:id="@+id/activity_menu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/strock_grad"
     android:orientation="vertical">
 
 
@@ -147,13 +148,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:orientation="horizontal"
-                    android:background="#eff3f5">
+                    android:background="@drawable/strock_col1">
 
+
+                <!--android:background="@drawable/strock_col1-->
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/inbox"
-                        android:backgroundTint="#7b7b7b"
+                        android:backgroundTint="@color/white"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"/>
 
@@ -164,7 +167,7 @@
                         android:textStyle="bold"
                         android:textSize="20dp"
                         android:layout_marginLeft="10dp"
-                        android:textColor="#7b7b7b"
+                        android:textColor="#fff"
                         android:gravity="center"
                         android:layout_gravity="center"/>
 

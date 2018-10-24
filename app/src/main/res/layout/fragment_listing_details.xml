@@ -63,7 +63,6 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="5dp"
-
                 android:background="@drawable/strock_btn_green"
                 android:fontFamily="@font/muli_bold"
                 android:text="Call Now"
@@ -125,7 +124,7 @@
                     android:fontFamily="@font/muli_bold"
                     android:gravity="left|bottom"
 
-                    android:text="Loading Loading"
+                    android:text=""
                     android:textColor="@color/blue"
                     android:textSize="20dp" />
 
@@ -162,7 +161,7 @@
                         android:layout_gravity="center"
                         android:drawableTint="@color/md_blue_grey_400"
                         android:fontFamily="@font/muli"
-                        android:text="Loading"
+                        android:text=""
                         android:gravity="left|bottom"
                         android:textColor="@color/black"
                         android:textSize="16dp" />
@@ -277,7 +276,7 @@
                     android:fontFamily="@font/muli"
                     android:gravity="center_vertical"
                     android:paddingRight="3dp"
-                    android:text="Loading Loading Loading Loading Loading Loading v Loading Loading "
+                    android:text=""
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -315,7 +314,7 @@
                 android:drawablePadding="10dp"
                 android:drawableTint="@color/md_blue_grey_400"
                 android:fontFamily="@font/muli"
-                android:text="Loading"
+                android:text=""
                 android:textColor="@color/black"
 
                 android:textSize="16dp" />
@@ -333,7 +332,7 @@
                 android:drawablePadding="10dp"
                 android:drawableTint="@color/md_blue_grey_400"
                 android:fontFamily="@font/muli"
-                android:text="0120-274087"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="16dp" />
 

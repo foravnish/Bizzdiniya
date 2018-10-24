@@ -122,15 +122,12 @@ public class DashboardListing extends Fragment {
                             AllProducts.add(map);
 
                         }
-                        //  AllEvents.add(hashMap);
+
                     }
 
                     else if (response.getString("status").equalsIgnoreCase("failure")){
                         expListView.setVisibility(View.GONE);
                         imageNoListing.setVisibility(View.VISIBLE);
-
-                        //Toast.makeText(getActivity(), "Offer list not available", Toast.LENGTH_SHORT).show();
-                        // errorDialog("Offer list not available");
 
 
                     }
@@ -148,7 +145,7 @@ public class DashboardListing extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 VolleyLog.d("Respose", "Error: " + error.getMessage());
                 Toast.makeText(getActivity(),
-                        "Error! Please Connect to the internet", Toast.LENGTH_SHORT).show();
+                        "Error! Please Connect to the internet.", Toast.LENGTH_SHORT).show();
                 // hide the progress dialog
                 Util.cancelPgDialog(dialog);
 

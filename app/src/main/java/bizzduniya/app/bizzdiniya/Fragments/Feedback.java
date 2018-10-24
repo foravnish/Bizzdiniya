@@ -105,14 +105,12 @@ public class Feedback extends Fragment {
         data.add("Queries/Complaints");
         data.add("Subscription Enquiry");
         data.add("Press Contact");
-        data.add("ContactAdvertising/Events");
+        data.add("Contact Advertising/Events");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, data);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinerCat.setAdapter(dataAdapter);
 
         HomeAct.title.setText("Feedback");
-
-
 
         spinerCat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -268,7 +266,7 @@ public class Feedback extends Fragment {
             return false;
         }
         else if (mobile.getText().toString().length() < 10) {
-            mobile.setError("Oops! Enter 10 digit Mobile No.");
+            mobile.setError("Oops! Enter 10 digit Mobile No");
             mobile.requestFocus();
             return false;
         }
@@ -291,7 +289,6 @@ public class Feedback extends Fragment {
             message.requestFocus();
             return false;
         }
-
         return true;
 
     }

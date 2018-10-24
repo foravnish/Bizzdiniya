@@ -69,7 +69,6 @@ public class AllEvents extends Fragment {
         imageNoListing = (ImageView) view.findViewById(R.id.imageNoListing);
 
         getActivity().setTitle("Event List");
-        getActivity().setTitle("Event List");
 
         dialog=new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

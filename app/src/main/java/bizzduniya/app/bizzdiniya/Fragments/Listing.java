@@ -503,8 +503,6 @@ public class Listing extends Fragment {
 //        jsonObjReq.setShouldCache(false);
 //        AppController.getInstance().addToRequestQueue(jsonObjReq);
 
-
-
     }
 
 
@@ -534,6 +532,7 @@ public class Listing extends Fragment {
         LinearLayout footer_layout;
 
     }
+
     class Adapter extends BaseAdapter {
 
         LayoutInflater inflater;

@@ -103,7 +103,7 @@ public class ListingRecycleView extends Fragment {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
 
         products_rclv.setLayoutManager(mLayoutManager);
-        products_rclv.setItemAnimator(new DefaultItemAnimator());
+     //   products_rclv.setItemAnimator(new DefaultItemAnimator());
 
         dialog=new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -134,8 +134,6 @@ public class ListingRecycleView extends Fragment {
                         FragmentTransaction ft=manager.beginTransaction();
                         fragment.setArguments(bundle);
                         ft.replace(R.id.content_frame,fragment).addToBackStack(null).commit();
-
-
                     }
                 })
         );

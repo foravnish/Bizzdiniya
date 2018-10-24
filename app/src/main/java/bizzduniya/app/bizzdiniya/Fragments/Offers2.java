@@ -83,6 +83,7 @@ public class Offers2 extends Fragment {
         tv1=view.findViewById(R.id.tv1);
 
 
+
         spiner=view.findViewById(R.id.spiner);
         getQuotre=view.findViewById(R.id.getQuotre);
         nameQ=view.findViewById(R.id.nameQ);
