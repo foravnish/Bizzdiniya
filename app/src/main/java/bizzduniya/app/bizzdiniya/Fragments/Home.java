@@ -1773,11 +1773,14 @@ public class Home extends Fragment implements View.OnClickListener {
 
         public CustomPagerAdapter2(Context context) {
             mContext = context;
-
             mLayoutInflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            if (mLayoutInflater == null) {
-                throw new AssertionError("LayoutInflater not found.");
-            }
+
+//            if (mLayoutInflater == null) {
+//                throw new AssertionError("LayoutInflater not found.");
+//            }
+//            else{
+//
+//            }
         }
 
         @Override
@@ -1799,8 +1802,6 @@ public class Home extends Fragment implements View.OnClickListener {
             View itemView = mLayoutInflater.inflate(R.layout.page_item, container, false);
 
             NetworkImageView imageView = (NetworkImageView) itemView.findViewById(R.id.imageView);
-
-
 
 
             ImageLoader imageLoader = AppController.getInstance().getImageLoader();
@@ -1927,9 +1928,6 @@ public class Home extends Fragment implements View.OnClickListener {
         // Start auto screen slideshow after 1s
         handler.postDelayed(runnale, 3000);
     }
-
-
-
 
 
 }
