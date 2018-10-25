@@ -230,7 +230,7 @@ public class ListingDetails extends Fragment {
 //                            for(int k=0;k<words.length;k++)
 //                            {
 //                                Log.d("dsfsdfsdgfsdgdsf",words[k]);
-////           list.add(words[k]);
+//                      //           list.add(words[k]);
 //
 //                                HashMap<String,String>map=new HashMap<>();
 //                                map.put("title",words[k]);
@@ -256,23 +256,6 @@ public class ListingDetails extends Fragment {
 
 
 
-
-//                            StringTokenizer tokenizer = new StringTokenizer(str, ",");
-//                            while (tokenizer.hasMoreTokens()) {
-//                                Log.d("dsfsfsdfsdfsdf",tokenizer.nextToken());
-///
-//                                AllProducts3.clear();
-//
-//                                    HashMap<String,String> map=new HashMap<>();
-//                                    map.put("title", tokenizer.nextToken());
-//
-//                                    mAdapter3 = new HLVAdapter2(getActivity());
-//
-//                                    mRecyclerView3.setAdapter(mAdapter3);
-//                                    mAdapter3.notifyDataSetChanged();
-//                                    AllProducts3.add(map);
-//
-//                            }
                         }
                     }
 

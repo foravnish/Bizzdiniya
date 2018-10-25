@@ -25,12 +25,12 @@
             android:layout_weight="1"/>
 
         <!--<TextView-->
-        <!--android:id="@+id/textviwe"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Loading..."-->
-        <!--android:layout_weight="4"-->
-        <!--android:textSize="22dp"/>-->
+            <!--android:id="@+id/textviwe"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Loading..."-->
+            <!--android:layout_weight="4"-->
+            <!--android:textSize="22dp"/>-->
     </LinearLayout>
 
 </LinearLayout>

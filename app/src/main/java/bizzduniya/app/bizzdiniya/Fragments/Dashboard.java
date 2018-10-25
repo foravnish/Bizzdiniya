@@ -179,7 +179,7 @@ public class Dashboard extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 VolleyLog.d("Respose", "Error: " + error.getMessage());
                 Toast.makeText(getActivity(),
-                        "Error! Please Connect to the internet", Toast.LENGTH_SHORT).show();
+                        "Error! Please Connect to the internet.", Toast.LENGTH_SHORT).show();
                 // hide the progress dialog
                 Util.cancelPgDialog(dialog);
 
@@ -189,9 +189,6 @@ public class Dashboard extends Fragment {
         // Adding request to request queue
         jsonObjReq.setShouldCache(false);
         AppController.getInstance().addToRequestQueue(jsonObjReq);
-
-
-
 
 
         return view;
