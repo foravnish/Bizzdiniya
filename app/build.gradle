@@ -52,4 +52,8 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.0'
     compile 'com.gelitenight.waveview:waveview:1.0.0'
     compile 'com.theartofdev.edmodo:android-image-cropper:1.2.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'

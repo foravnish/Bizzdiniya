@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-feature android:name="android.hardware.camera" />
+
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -23,9 +24,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="face"/>
-
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="face" />
 
         <activity
             android:name=".Activites.SplashAct"
@@ -40,20 +41,22 @@
         <activity
             android:name=".Activites.Login"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activites.HomeAct"
             android:label="@string/title_activity_home"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Activites.AddProduct"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
-        <activity android:name=".Activites.CropImageActivity"
-            android:label="Crop Image"></activity>
-        <activity android:name=".Activites.ImagePickerActivity"
-            android:label="Pick Image"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activites.AddProduct"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activites.CropImageActivity"
+            android:label="Crop Image" />
+        <activity
+            android:name=".Activites.ImagePickerActivity"
+            android:label="Pick Image" />
+        <activity android:name=".Activites.MainActivity"></activity>
     </application>
 
 </manifest>

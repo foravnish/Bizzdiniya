@@ -186,7 +186,6 @@ public class HelpDesk extends Fragment {
                         FragmentManager manager=getActivity().getSupportFragmentManager();
                         FragmentTransaction ft=manager.beginTransaction().addToBackStack(null);
                         ft.replace(R.id.content_frame,fragment).commit();
-
                     }
                     else {
                         Util.errorDialog(context,jsonObject.optString("message"));

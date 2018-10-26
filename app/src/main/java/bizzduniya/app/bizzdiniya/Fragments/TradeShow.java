@@ -163,7 +163,7 @@ public class TradeShow extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 VolleyLog.d("Respose", "Error: " + error.getMessage());
                 Toast.makeText(getActivity(),
-                        "Error! Please Connect to the internet", Toast.LENGTH_SHORT).show();
+                        "Error! Please Connect to the internet.", Toast.LENGTH_SHORT).show();
                 // hide the progress dialog
                 Util.cancelPgDialog(dialog);
 
@@ -237,7 +237,6 @@ public class TradeShow extends Fragment {
             address=convertView.findViewById(R.id.address);
             desc=convertView.findViewById(R.id.desc);
 
-
             name.setText(Html.fromHtml(AllProducts.get(position).get("trade_name")));
             date.setText(AllProducts.get(position).get("start_date")+" - "+AllProducts.get(position).get("end_date"));
             address.setText(AllProducts.get(position).get("venue"));
@@ -251,8 +250,6 @@ public class TradeShow extends Fragment {
             address.setTypeface(tvFont);
             desc.setTypeface(tvFont);
             date.setTypeface(tvFont);
-
-
 
             return convertView;
         }
