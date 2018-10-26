@@ -33,7 +33,9 @@ public class EventDetail extends Fragment {
     }
 
 
-   NetworkImageView bannerpic;
+
+
+    NetworkImageView bannerpic;
     TextView eventname,addresstv,datetv,about,orgBy,orgAdd;
     Button btnCall;
 
