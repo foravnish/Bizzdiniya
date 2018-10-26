@@ -75,7 +75,7 @@ public class Login extends AppCompatActivity {
                 ConnectivityManager conMgr =  (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo netInfo = conMgr.getActiveNetworkInfo();
                 if (netInfo == null){
-                    Toast.makeText(getApplicationContext(), "Please Connect to the internet...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Please Connect to the internet.", Toast.LENGTH_SHORT).show();
                 }else{
                     Intent intent=new Intent(Login.this,HomeAct.class);
                     intent.putExtra("type","0");
@@ -115,11 +115,11 @@ public class Login extends AppCompatActivity {
 
                                                 MyPrefrences.setUserLogin(getApplicationContext(), true);
                                                 MyPrefrences.setUserID(getApplicationContext(), jsonObject1.optString("id").toString());
-//                                            MyPrefrences.setCatID(getApplicationContext(),jsonObject1.optString("cat_id").toString());
-//                                            MyPrefrences.setSCatID(getApplicationContext(),jsonObject1.optString("subcat").toString());
+//                                              MyPrefrences.setCatID(getApplicationContext(),jsonObject1.optString("cat_id").toString());
+//                                              MyPrefrences.setSCatID(getApplicationContext(),jsonObject1.optString("subcat").toString());
                                                 MyPrefrences.setUSENAME(getApplicationContext(), jsonObject1.optString("company_name").toString());
-                                            MyPrefrences.setEMAILID(getApplicationContext(),jsonObject1.optString("email").toString());
-                                            MyPrefrences.setMobile(getApplicationContext(),jsonObject1.optString("mobile").toString());
+                                                MyPrefrences.setEMAILID(getApplicationContext(),jsonObject1.optString("email").toString());
+                                                MyPrefrences.setMobile(getApplicationContext(),jsonObject1.optString("mobile").toString());
                                            // MyPrefrences.setImage(getApplicationContext(),jsonObject1.optString("image").toString());
 
                                             }
