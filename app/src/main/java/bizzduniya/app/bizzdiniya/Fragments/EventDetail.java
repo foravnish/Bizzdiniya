@@ -63,6 +63,7 @@ public class EventDetail extends Fragment {
         orgAdd.setText(getArguments().getString("orgAddress"));
 
 
+
         btnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
